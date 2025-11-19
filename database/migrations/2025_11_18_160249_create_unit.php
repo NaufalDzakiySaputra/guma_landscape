@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('unit', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        $table->id('id_unit');
+        $table->string('nama_unit');
+        $table->integer('harga_unit');
+        $table->integer('kapasitas');
+        $table->enum('status_unit', ['available', 'booked'])->default('available');
+        $table->text('deskripsi_unit')->nullable();
+        $table->timestamps();
         });
     }
 

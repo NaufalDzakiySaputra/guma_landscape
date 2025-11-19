@@ -14,8 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('detail_reservasi', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        $table->id('id_detail');
+        $table->unsignedBigInteger('id_reservasi');
+        $table->unsignedBigInteger('id_unit');
+        $table->integer('jumlah_hari');
+        $table->integer('subtotal');
+        $table->timestamps();
+        $table->foreign('id_reservasi')->references('id_reservasi')->on('reservasis')->onDelete('cascade');
+        $table->foreign('id_unit')->references('id_unit')->on('units')->onDelete('cascade');
         });
     }
 

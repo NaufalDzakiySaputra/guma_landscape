@@ -14,8 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pembayaran', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        $table->id('id_pembayaran');
+        $table->unsignedBigInteger('id_reservasi');
+        $table->date('tanggal_pembayaran');
+        $table->integer('total_pembayaran');
+        $table->enum('metode_pembayaran', ['cash', 'transfer', 'qris', 'doku']);
+        $table->enum('status_pembayaran', ['pending', 'paid'])->default('pending');
+
+        $table->timestamps();
+
+        $table->foreign('id_reservasi')->references('id_reservasi')->on('reservasis')->onDelete('cascade');
         });
     }
 

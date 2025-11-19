@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('pengunjung', function (Blueprint $table) {
             $table->id('id_pengunjung');
             $table->string('nama');
-            $table->INT('no_telepon', 20);
+            $table->integer('no_telepon', 20);
             $table->text('alamat')->nullable();
             $table->timestamps();
         });
