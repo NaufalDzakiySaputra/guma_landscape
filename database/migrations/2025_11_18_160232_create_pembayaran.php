@@ -18,12 +18,10 @@ return new class extends Migration
         $table->unsignedBigInteger('id_reservasi');
         $table->date('tanggal_pembayaran');
         $table->integer('total_pembayaran');
-        $table->enum('metode_pembayaran', ['cash', 'transfer', 'qris', 'doku']);
+        $table->enum('metode_pembayaran', ['transfer', 'cash']);
         $table->enum('status_pembayaran', ['pending', 'paid'])->default('pending');
-
         $table->timestamps();
-
-        $table->foreign('id_reservasi')->references('id_reservasi')->on('reservasis')->onDelete('cascade');
+        $table->foreign('id_reservasi')->references('id_reservasi')->on('reservasi');
         });
     }
 

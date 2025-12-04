@@ -1,0 +1,48 @@
+/* STYLE DASAR WEBSITE */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+header {
+    background-color: #2b6b47;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    background-color: #1e4830;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.footer {
+    margin-top: 40px;
+    background-color: #2b6b47;
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
