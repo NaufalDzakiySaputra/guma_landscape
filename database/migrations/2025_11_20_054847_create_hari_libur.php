@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pengunjung', function (Blueprint $table) {
-             $table->id('id_pengunjung');
-        $table->string('nama');
-        $table->string('no_telepon');
-        $table->text('alamat')->nullable();
-        $table->timestamps();
+        Schema::create('hari_libur', function (Blueprint $table) {
+            $table->id();
+            $table->date('tanggal')->unique();
+             $table->enum('jenis_libur', ['nasional','weekend_spesial','hari_besar']);
+        $table->string('keterangan')->nullable();  // Contoh: Hari Raya Idul Fitri
+            $table->timestamps();
         });
     }
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pengunjung');
+        Schema::dropIfExists('hari_libur');
     }
 };
