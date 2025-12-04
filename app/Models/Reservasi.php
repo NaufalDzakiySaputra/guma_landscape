@@ -10,11 +10,6 @@ class Reservasi extends Model
     use HasFactory;
     
     protected $table = 'reservasi';
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
     protected $fillable = [
         'status_reservasi',
         'jumlah_orang',
@@ -26,11 +21,7 @@ class Reservasi extends Model
         'id_pengunjung',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
+
     protected $casts = [
         'tanggal_reservasi' => 'date',
         'tanggal_mulai' => 'date',
@@ -39,9 +30,7 @@ class Reservasi extends Model
         'jumlah_orang' => 'int',
         'total_harga' => 'int',
     ];
-    /**
-     * Relasi belongsTo ke model Pengunjung.
-     */
+  
     public function pengunjung()
     {
         return $this->belongsTo(Pengunjung::class, 'id_pengunjung', 'id_pengunjung');
