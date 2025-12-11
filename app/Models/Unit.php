@@ -24,12 +24,12 @@ class Unit extends Model
     //field yang boleh diiis mass assigment
     protected $fillable = [
         'nama_unit',
-        'harga_weekday',
+        'harga_weekday',  
         'harga_wekeend',
         'harga_libur',
         'harga_libur_besar',
         'kapasitas',
-        'status_unit',
+        'status_uni  t',
         'deskripsi_unit',
     ];
 }
