@@ -20,8 +20,8 @@ return new class extends Migration
         $table->integer('jumlah_hari');
         $table->integer('subtotal');
         $table->timestamps();
-        $table->foreign('id_reservasi')->references('id_reservasi')->on('reservasis')->onDelete('cascade');
-        $table->foreign('id_unit')->references('id_unit')->on('units')->onDelete('cascade');
+        $table->foreign('id_reservasi')->references('id_reservasi')->on('reservasi');
+        $table->foreign('id_unit')->references('id_unit')->on('unit');
         });
     }
 

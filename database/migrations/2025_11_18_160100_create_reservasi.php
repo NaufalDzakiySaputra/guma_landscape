@@ -14,17 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reservasi', function (Blueprint $table) {
-        $table->enum('status_reservasi', ['pending', 'confirmed', 'cancelled'])
-              ->default('pending');
+         $table->id('id_reservasi');
+        $table->unsignedBigInteger('id_pengunjung');
+        $table->enum('status_reservasi', ['pending', 'confirmed', 'cancelled'])->default('pending');
         $table->integer('jumlah_orang');
-        $table->string('waktu_reservasi'); // pagi / siang / malam
+        $table->string('waktu_reservasi');
         $table->date('tanggal_reservasi');
         $table->date('tanggal_mulai');
         $table->date('tanggal_selesai');
-        $table->integer('total_harga')->default(0);
+        $table->integer('total_harga')->nullable();
         $table->timestamps();
-
-        $table->foreign('id_pengunjung')->references('id_pengunjung')->on('pengunjungs')->onDelete('cascade');
+        $table->foreign('id_pengunjung')->references('id_pengunjung')->on('pengunjung');
         });
     }
 
